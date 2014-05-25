@@ -1,0 +1,10 @@
+# Site settings
+title: "Kallang's Blog"
+email: kallang@outlook.com
+description: "Kallang is a mobile developer, likes programming."
+baseurl: ""
+url: "http://kallang.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
