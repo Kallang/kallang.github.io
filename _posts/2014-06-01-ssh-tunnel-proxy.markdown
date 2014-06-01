@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Setting up an ssh Tunnel and Using it as Firefox Proxy"
+title:  "Setting up an SSH Tunnel and Using it as Firefox Proxy"
 date:   2014-06-01 21:28:02
 categories: unix
 ---
@@ -28,6 +28,22 @@ Thirdly, open Firefox and set up a socks v5 proxy with host your_server_ip and p
 * Type `about:config` in your browser's and press Enter to open Firefox preferences.
 * Type `type network.proxy.socks` to filter the settings we want out. Set `network.proxy.socks_remote_dns` to `true` by double clicking it.
 * Restart Firefox.
+
+For linode users, if you got the following result during visiting google,
+	
+	We're sorry...
+	
+	... but your computer or network may be sending automated queries. 
+	To protect our users, we can't process your request right now.
+	See Google Help for more information.
+
+You should disable your ipv6 by adding the following lines in `/etc/sysctl.conf`.
+
+	net.ipv6.conf.all.disable_ipv6 = 1 
+	net.ipv6.conf.default.disable_ipv6 = 1 
+	net.ipv6.conf.lo.disable_ipv6 = 1
+
+
 
 References:
 
