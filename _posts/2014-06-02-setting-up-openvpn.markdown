@@ -36,8 +36,7 @@ ms-dns 106.187.34.20
 logfile /var/log/pptpd.log
 {% endhighlight %}
 
-
-	  The two DNS server will be used on each client, if it is not configured, it should be configured on each client. `logfile` will be used for PPTP service's logging, also you can comment `logwtmp` in `/etc/pptpd.conf` to disable logging.
+  The two DNS server will be used on each client, if it is not configured, it should be configured on each client. `logfile` will be used for PPTP service's logging, also you can comment `logwtmp` in `/etc/pptpd.conf` to disable logging.
 
 # 5. Restart PPTP service.
 {% highlight bash %}
