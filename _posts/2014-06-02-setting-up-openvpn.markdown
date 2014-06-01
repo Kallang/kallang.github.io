@@ -36,14 +36,14 @@ ms-dns 106.187.34.20
 logfile /var/log/pptpd.log
 {% endhighlight %}
 
-  The two DNS server will be used on each client, if it is not configured, it should be configured on each client. `logfile` will be used for PPTP service's logging, also you can comment `logwtmp` in `/etc/pptpd.conf` to disable logging.
+  The two DNS servers will be used on each client. If it is not configured, each client should setup one for itself. `logfile` will be used for PPTP service's logging, also you can comment `logwtmp` in `/etc/pptpd.conf` to disable logging.
 
 # 5. Restart PPTP service.
 {% highlight bash %}
 /etc/init.d/pptpd restart
 {% endhighlight %}
 
-  And now you can connect to the PPTP service from clients, but clients can not access the Internet as there are no routing rules.
+  And now you can connect to the PPTP service, but connected clients can not access the Internet as there are no routing rules.
 
 # 6. Enable IP forwarding by modifying `/etc/sysctl.conf`
 
