@@ -15,7 +15,7 @@ sudo apt-get install pptpd
 
 {% highlight bash %}
 localip 192.168.0.1
-remoteip 192.168.0.234-238,192.168.0.245
+remoteip 192.168.0.50-238,192.168.0.245
 {% endhighlight %}
 
 # 3. Modify `/etc/ppp/chap-secrets` to setup the username and password.
