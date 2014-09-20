@@ -24,3 +24,36 @@ categories: ios
     // Adjust your constraints first
     // Then call then following code within an animation block
     [view layoutIfNeeded]
+
+    # Animating the constant (Lion & Mountain Lion)
+    [[myConstraint animator] setConstant:10.0];
+    # Animation using CoreAnimation (Mountain Lion & iOS 6)
+    NSAnimationContext runAnimationGroup:^(NSAnimationContext *ctx) {
+      [ctx setAllowsImplicitAnimation:YES]
+      ...
+      [view layoutSubtreeIfNeeded];
+    }
+
+    [UIView animationWithDuration:2.0 animations:^{
+      ...
+      [view layoutIfNeeded];
+    }];
+
+# Helpful debugging defaults
+
+    # Double all localized strings
+    NSDoubleLocalizedStrings YES
+    # Simulate right to left
+    AppleTextDirection YES
+    NSForceRightToLeftWritingDirection YES
+    # Draw view alignment rects
+    NSViewShowAllAlignmentRects YES
+    UIViewShowAllAlignmentRects YES
+
+
+# Post script
+
+ You can learn a few keyboard shortcuts:
+
+ 1. `Ctrl+Shift+Click` in Interface Builder to show all classes.
+ 2. `CMD+Shift+O` to quick open, and use `Option+Shift+Return` in the search result list to select how to open the new corresponding file.
