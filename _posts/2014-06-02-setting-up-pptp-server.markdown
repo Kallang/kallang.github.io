@@ -63,7 +63,7 @@ iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
 
 # 8. Save the forwarding rules.
   As the rules added using iptables will be lost after system or network restart, we should save them and restore them after restart.
-  
+
   * Save forwarding rules:
 {% highlight bash %}
 iptables-save > /etc/iptables-rules
@@ -72,10 +72,9 @@ iptables-save > /etc/iptables-rules
   * Create a new file `/etc/network/if-up.d/iptables` with the following content:
 
 {% highlight bash %}
-#!bin/bash
+#!/bin/bash
  iptables-restore < /etc/iptables-rules
 {% endhighlight %}  
 
 
   Execute `chmod +x /etc/network/if-up.d/iptables` to make it executable. Now the forwarding rules will be loaded each time network adapter boots.
-
