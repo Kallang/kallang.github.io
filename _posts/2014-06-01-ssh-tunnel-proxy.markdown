@@ -7,7 +7,7 @@ categories: unix
 Firstly, we should have a server with SSH service running. Set up a user with shell disabled.
 
 
-    useradd /home/socksproxy -m -g socksproxy -s /bin/false socksproxy
+    groupadd socksproxy 
     useradd -d /home/socksproxy -m -g socksproxy -s /bin/false socksproxy
     passwd socksproxy
 
