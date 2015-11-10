@@ -9,14 +9,12 @@ Setting up a PPTP VPN on Ubuntu is easy, how about setting up one on CentOS?
 
 # Install pptpd & iptables
 
-```
-yum install -y perl
-yum install -y vim
-yum install -y ppp
-wget http://poptop.sourceforge.net/yum/stable/packages/pptpd-1.4.0-1.el6.x86_64.rpm
-rpm -Uhv pptpd-1.4.0-1.el6.x86_64.rpm
-yum install iptables
-```
+	yum install -y perl
+	yum install -y vim
+	yum install -y ppp
+	wget http://poptop.sourceforge.net/yum/stable/packages/pptpd-1.4.0-1.el6.x86_64.rpm
+	rpm -Uhv pptpd-1.4.0-1.el6.x86_64.rpm
+	yum install iptables
 
 # Change the Configurations
 
@@ -48,11 +46,11 @@ Use `sysctl -p` to make it effect.
 
 ## Setting up iptables & start the service
 
-```
-iptables -A INPUT -i eth0 -p tcp --dport 1723 -j ACCEPT
-iptables -A INPUT -i eth0 -p gre -j ACCEPT
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-service pptpd restart
-chkconfig pptpd on
-```
+
+	iptables -A INPUT -i eth0 -p tcp --dport 1723 -j ACCEPT
+	iptables -A INPUT -i eth0 -p gre -j ACCEPT
+	iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+	service pptpd restart
+	chkconfig pptpd on
+
 
