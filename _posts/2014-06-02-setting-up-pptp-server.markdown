@@ -21,7 +21,7 @@ remoteip 192.168.0.50-238,192.168.0.245
 # 3. Modify `/etc/ppp/chap-secrets` to setup the username and password.
 
 {% highlight bash %}
-your_username pptp your_password *
+your_username pptpd your_password *
 {% endhighlight %}
 
 * `your_username` is the username for your VPN service.
