@@ -58,7 +58,9 @@ net.ipv4.ip_forward=1
 apt-get install iptables
 iptables -A FORWARD -s 192.168.0.0/24 -j ACCEPT
 iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth1 -j MASQUERADE
 {% endhighlight %}
+
 
 
 # 8. Save the forwarding rules.
